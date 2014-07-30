@@ -3,8 +3,8 @@
 ### Instuctions 
 
 1. clone app
-2. rake db:migrate
-3. rake db:seeed
+2. `rake db:migrate`
+3. `rake db:seed`
 
 #### other resources
 
