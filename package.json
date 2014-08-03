@@ -1,0 +1,15 @@
+{
+  "name": "angular-views-and-routing-course",
+  "version": "0.0.0",
+  "description": "an app to help learn about angular routing and views",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Will Harris",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.7.2"
+  }
+}
