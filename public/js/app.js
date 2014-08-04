@@ -10,6 +10,10 @@ var app = angular.module('ngViewapp', [
       when('/somepage', {
         templateUrl: 'views/another_page.html',
       }).
+      when('/page/:number', {
+        templateUrl: 'views/page.html',
+        controller: 'PageCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });
