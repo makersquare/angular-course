@@ -41,5 +41,4 @@ gem 'pry'
 gem 'pry-rails'
 
 gem 'angularjs-rails'
-
-
+gem 'ng-rails-csrf'

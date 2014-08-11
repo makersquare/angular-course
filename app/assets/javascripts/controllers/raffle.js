@@ -1,15 +1,14 @@
 angular.module("rafflerApp")
-.controller('RaffleCtrl', function($scope){
+.controller('RaffleCtrl', function($scope, $resource){
+
+  var Entry = $resource("/entries/:id", {id: "@id"}, {update: {method: "PATCH"}})
+
+  $scope.entries = Entry.query();
 
   $scope.addEntry = function(){
-    $scope.entries.push($scope.newEntry)
+    entry = Entry.save($scope.newEntry)
+    $scope.entries.push(entry)
     $scope.newEntry = {}
   }
-
-  $scope.entries = [
-    {name: "Shaan"},
-    {name: "Shehzahn"},
-    {name: "Harsh"}
-  ]
 
 })
