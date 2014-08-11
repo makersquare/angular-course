@@ -42,3 +42,8 @@ gem 'pry-rails'
 
 gem 'angularjs-rails'
 gem 'ng-rails-csrf'
+
+group :development, :test do
+    gem "teaspoon"
+    gem 'phantomjs'
+end
