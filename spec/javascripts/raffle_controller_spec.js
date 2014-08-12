@@ -18,8 +18,6 @@ describe('RaffleCtrl', function() {
         {name: "Harsh"}
     ]
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/entries').
-      respond(entries);
 
     scope = $rootScope.$new();
     ctrl = $controller('RaffleCtrl', {$scope: scope});
@@ -29,9 +27,19 @@ describe('RaffleCtrl', function() {
   // This allows us to inject a service but then attach it to a variable
   // with the same name as the service in order to avoid a name conflict.
   it('should get entries', function() {
+
+    $httpBackend.expectGET('/entries').respond(entries);
+
     // The responses are not returned until we call the $httpBackend.flush 
     $httpBackend.flush();
     expect(scope.entries).toEqualData(entries);
+  });
+
+  it('should handle api failures', function() {
+    $httpBackend.expectGET('/entries').respond(500, '');
+
+    $httpBackend.flush();
+    expect(scope.state).toBe('error');
   });
 
 });
