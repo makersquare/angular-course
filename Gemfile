@@ -46,4 +46,5 @@ gem 'ng-rails-csrf'
 group :development, :test do
     gem "teaspoon"
     gem 'phantomjs'
+    gem 'protractor-rails'
 end
